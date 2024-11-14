@@ -15,9 +15,10 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QListWidget>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <picbutton.h>
+#include <picstatebtn.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,84 +28,84 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *slideShow;
     QGridLayout *gridLayout;
-    QWidget *slideprewid;
-    QHBoxLayout *horizontalLayout_5;
-    QPushButton *slidpreBtn;
-    QWidget *picAnimation;
     QWidget *slidenextwid;
-    QHBoxLayout *horizontalLayout_6;
-    QPushButton *sildnextBtn;
     QHBoxLayout *horizontalLayout_4;
-    QPushButton *playBtn;
-    QPushButton *closeBtn;
+    PicButton *slidenextBtn;
+    QWidget *slidprewid;
+    QHBoxLayout *horizontalLayout_3;
+    PicButton *slidepreBtn;
+    QWidget *picAnimation;
+    QHBoxLayout *horizontalLayout_2;
+    PicStateBtn *playBtn;
+    PicButton *closeBtn;
     QWidget *preShow;
     QHBoxLayout *horizontalLayout;
     QWidget *widget;
-    QListWidget *PreListWidget;
+    QListWidget *preListWidget;
 
-    void setupUi(QDialog *SideShowDig)
+    void setupUi(QDialog *SlideShowDlg)
     {
-        if (SideShowDig->objectName().isEmpty())
-            SideShowDig->setObjectName("SideShowDig");
-        SideShowDig->resize(730, 429);
-        verticalLayout = new QVBoxLayout(SideShowDig);
+        if (SlideShowDlg->objectName().isEmpty())
+            SlideShowDlg->setObjectName("SlideShowDlg");
+        SlideShowDlg->resize(678, 486);
+        verticalLayout = new QVBoxLayout(SlideShowDlg);
         verticalLayout->setObjectName("verticalLayout");
-        slideShow = new QWidget(SideShowDig);
+        slideShow = new QWidget(SlideShowDlg);
         slideShow->setObjectName("slideShow");
         gridLayout = new QGridLayout(slideShow);
         gridLayout->setObjectName("gridLayout");
-        slideprewid = new QWidget(slideShow);
-        slideprewid->setObjectName("slideprewid");
-        slideprewid->setMinimumSize(QSize(80, 0));
-        slideprewid->setMaximumSize(QSize(80, 16777215));
-        horizontalLayout_5 = new QHBoxLayout(slideprewid);
-        horizontalLayout_5->setObjectName("horizontalLayout_5");
-        slidpreBtn = new QPushButton(slideprewid);
-        slidpreBtn->setObjectName("slidpreBtn");
+        slidenextwid = new QWidget(slideShow);
+        slidenextwid->setObjectName("slidenextwid");
+        slidenextwid->setMinimumSize(QSize(80, 0));
+        slidenextwid->setMaximumSize(QSize(80, 16777215));
+        horizontalLayout_4 = new QHBoxLayout(slidenextwid);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        slidenextBtn = new PicButton(slidenextwid);
+        slidenextBtn->setObjectName("slidenextBtn");
 
-        horizontalLayout_5->addWidget(slidpreBtn);
+        horizontalLayout_4->addWidget(slidenextBtn);
 
 
-        gridLayout->addWidget(slideprewid, 1, 0, 1, 1);
+        gridLayout->addWidget(slidenextwid, 1, 2, 1, 1);
+
+        slidprewid = new QWidget(slideShow);
+        slidprewid->setObjectName("slidprewid");
+        slidprewid->setMinimumSize(QSize(80, 0));
+        slidprewid->setMaximumSize(QSize(80, 16777215));
+        horizontalLayout_3 = new QHBoxLayout(slidprewid);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        slidepreBtn = new PicButton(slidprewid);
+        slidepreBtn->setObjectName("slidepreBtn");
+
+        horizontalLayout_3->addWidget(slidepreBtn);
+
+
+        gridLayout->addWidget(slidprewid, 1, 0, 1, 1);
 
         picAnimation = new QWidget(slideShow);
         picAnimation->setObjectName("picAnimation");
 
         gridLayout->addWidget(picAnimation, 1, 1, 1, 1);
 
-        slidenextwid = new QWidget(slideShow);
-        slidenextwid->setObjectName("slidenextwid");
-        slidenextwid->setMinimumSize(QSize(80, 0));
-        slidenextwid->setMaximumSize(QSize(80, 16777215));
-        horizontalLayout_6 = new QHBoxLayout(slidenextwid);
-        horizontalLayout_6->setObjectName("horizontalLayout_6");
-        sildnextBtn = new QPushButton(slidenextwid);
-        sildnextBtn->setObjectName("sildnextBtn");
-
-        horizontalLayout_6->addWidget(sildnextBtn);
-
-
-        gridLayout->addWidget(slidenextwid, 1, 2, 1, 1);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName("horizontalLayout_4");
-        playBtn = new QPushButton(slideShow);
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        playBtn = new PicStateBtn(slideShow);
         playBtn->setObjectName("playBtn");
 
-        horizontalLayout_4->addWidget(playBtn);
+        horizontalLayout_2->addWidget(playBtn);
 
-        closeBtn = new QPushButton(slideShow);
+        closeBtn = new PicButton(slideShow);
         closeBtn->setObjectName("closeBtn");
 
-        horizontalLayout_4->addWidget(closeBtn);
+        horizontalLayout_2->addWidget(closeBtn);
 
 
-        gridLayout->addLayout(horizontalLayout_4, 0, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout_2, 0, 2, 1, 1);
 
 
         verticalLayout->addWidget(slideShow);
 
-        preShow = new QWidget(SideShowDig);
+        preShow = new QWidget(SlideShowDlg);
         preShow->setObjectName("preShow");
         horizontalLayout = new QHBoxLayout(preShow);
         horizontalLayout->setObjectName("horizontalLayout");
@@ -112,11 +113,11 @@ public:
         widget->setObjectName("widget");
         widget->setMinimumSize(QSize(0, 120));
         widget->setMaximumSize(QSize(16777215, 120));
-        PreListWidget = new QListWidget(widget);
-        PreListWidget->setObjectName("PreListWidget");
-        PreListWidget->setGeometry(QRect(10, 10, 16777215, 110));
-        PreListWidget->setMinimumSize(QSize(0, 110));
-        PreListWidget->setMaximumSize(QSize(16777215, 110));
+        preListWidget = new QListWidget(widget);
+        preListWidget->setObjectName("preListWidget");
+        preListWidget->setGeometry(QRect(10, 10, 16777215, 110));
+        preListWidget->setMinimumSize(QSize(0, 110));
+        preListWidget->setMaximumSize(QSize(16777215, 110));
 
         horizontalLayout->addWidget(widget);
 
@@ -126,18 +127,18 @@ public:
         verticalLayout->setStretch(0, 7);
         verticalLayout->setStretch(1, 1);
 
-        retranslateUi(SideShowDig);
+        retranslateUi(SlideShowDlg);
 
-        QMetaObject::connectSlotsByName(SideShowDig);
+        QMetaObject::connectSlotsByName(SlideShowDlg);
     } // setupUi
 
-    void retranslateUi(QDialog *SideShowDig)
+    void retranslateUi(QDialog *SlideShowDlg)
     {
-        SideShowDig->setWindowTitle(QCoreApplication::translate("SideShowDig", "Dialog", nullptr));
-        slidpreBtn->setText(QCoreApplication::translate("SideShowDig", "\345\211\215\344\270\200\344\270\252", nullptr));
-        sildnextBtn->setText(QCoreApplication::translate("SideShowDig", "\345\220\216\344\270\200\344\270\252", nullptr));
-        playBtn->setText(QCoreApplication::translate("SideShowDig", "\346\222\255\346\224\276", nullptr));
-        closeBtn->setText(QCoreApplication::translate("SideShowDig", "\345\205\263\351\227\255", nullptr));
+        SlideShowDlg->setWindowTitle(QCoreApplication::translate("SlideShowDlg", "Dialog", nullptr));
+        slidenextBtn->setText(QString());
+        slidepreBtn->setText(QString());
+        playBtn->setText(QString());
+        closeBtn->setText(QString());
     } // retranslateUi
 
 };

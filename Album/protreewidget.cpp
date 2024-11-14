@@ -11,7 +11,7 @@
 #include<QFileDialog>
 #include"removeprodialog.h"
 #include"opentreethread.h"
-#include"slideshowdlg1.h"
+#include"slideshowdlg.h"
 ProTreeWidget::ProTreeWidget(QWidget *parent)
     :QTreeWidget(parent),_active_item(nullptr),_right_btn_item(nullptr),
     _dialog_progress(nullptr),_seleted_item(nullptr),_thread_creat_pro(nullptr),
@@ -225,6 +225,10 @@ void ProTreeWidget::SlotSlideShow()
     if(!first_child_item)return;
     _slide_show_dlg=std::make_shared<SlideShowDlg>(this,
                     first_child_item,last_child_item);
+    //qDebug()<<first_child_item->GetPath();
+    //qDebug()<<last_child_item->GetPath();
+
+
     _slide_show_dlg->setModal(true);
     _slide_show_dlg->showMaximized();
 }

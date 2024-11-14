@@ -4,6 +4,7 @@ debug/mainwindow.o
 debug/opentreethread.o
 debug/picbutton.o
 debug/picshow.o
+debug/picstatebtn.o
 debug/prosetpage.o
 debug/protree.o
 debug/protreeitem.o
@@ -18,6 +19,7 @@ debug/moc_mainwindow.o
 debug/moc_opentreethread.o
 debug/moc_picbutton.o
 debug/moc_picshow.o
+debug/moc_picstatebtn.o
 debug/moc_prosetpage.o
 debug/moc_protree.o
 debug/moc_protreethread.o
