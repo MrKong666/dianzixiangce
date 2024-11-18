@@ -8,7 +8,9 @@
 #include<QProgressDialog>
 #include"protreethread.h"
 #include"opentreethread.h"
-
+#include<QMediaPlayer>
+#include<QtMultimedia/QMediaPlayer>
+#include<QAudioOutput>
 class SlideShowDlg;
 class ProTreeWidget : public QTreeWidget
 {
@@ -33,6 +35,11 @@ private:
 
 
     std::shared_ptr<SlideShowDlg>_slide_show_dlg;
+
+    QMediaPlayer* _player;
+    QVector<QUrl>*_playlist;
+    QAudioOutput *_audioOutput ;
+
 private slots:
     void SlotItemPressed(QTreeWidgetItem* pressedItem,int column);
     void SlotImport();
@@ -53,6 +60,9 @@ public slots:
     void SlotOpenPro(const QString& path);
     void SlotNextShow();
     void SlotPreShow();
+    void SlotSetMusic();
+    void SlotStartMusic();
+    void SlotStopMusic();
 signals:
     void SigCancelProgress();
     void SigCancelOpenProgress();

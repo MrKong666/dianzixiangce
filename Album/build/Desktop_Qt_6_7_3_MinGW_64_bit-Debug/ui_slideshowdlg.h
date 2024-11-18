@@ -14,11 +14,12 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <picanimationwid.h>
 #include <picbutton.h>
 #include <picstatebtn.h>
+#include <prelistwid.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -34,14 +35,14 @@ public:
     QWidget *slidprewid;
     QHBoxLayout *horizontalLayout_3;
     PicButton *slidepreBtn;
-    QWidget *picAnimation;
+    PicAnimationWid *picAnimation;
     QHBoxLayout *horizontalLayout_2;
     PicStateBtn *playBtn;
     PicButton *closeBtn;
     QWidget *preShow;
     QHBoxLayout *horizontalLayout;
     QWidget *widget;
-    QListWidget *preListWidget;
+    PreListWid *preListWidget;
 
     void setupUi(QDialog *SlideShowDlg)
     {
@@ -82,7 +83,7 @@ public:
 
         gridLayout->addWidget(slidprewid, 1, 0, 1, 1);
 
-        picAnimation = new QWidget(slideShow);
+        picAnimation = new PicAnimationWid(slideShow);
         picAnimation->setObjectName("picAnimation");
 
         gridLayout->addWidget(picAnimation, 1, 1, 1, 1);
@@ -113,11 +114,13 @@ public:
         widget->setObjectName("widget");
         widget->setMinimumSize(QSize(0, 120));
         widget->setMaximumSize(QSize(16777215, 120));
-        preListWidget = new QListWidget(widget);
+        preListWidget = new PreListWid(widget);
         preListWidget->setObjectName("preListWidget");
         preListWidget->setGeometry(QRect(10, 10, 16777215, 110));
         preListWidget->setMinimumSize(QSize(0, 110));
         preListWidget->setMaximumSize(QSize(16777215, 110));
+        preListWidget->setFlow(QListView::Flow::LeftToRight);
+        preListWidget->setViewMode(QListView::ViewMode::IconMode);
 
         horizontalLayout->addWidget(widget);
 

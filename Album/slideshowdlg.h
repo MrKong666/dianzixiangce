@@ -17,6 +17,10 @@ public:
                            QTreeWidgetItem* last_item=nullptr);
     ~SlideShowDlg();
 
+private slots:
+    void on_closeBtn_clicked();
+    void SlotSlideNext();
+    void SlotSlidePre();
 private:
     Ui::SlideShowDlg *ui;
     QTreeWidgetItem* _first_item;

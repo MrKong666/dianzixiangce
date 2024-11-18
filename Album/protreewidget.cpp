@@ -34,6 +34,12 @@ ProTreeWidget::ProTreeWidget(QWidget *parent)
 
     connect(_action_slideshow,&QAction::triggered,this
             ,&ProTreeWidget::SlotSlideShow);
+
+    _player=new QMediaPlayer(this);
+    _playlist=new QVector<QUrl>;
+    _audioOutput = new QAudioOutput;
+    _player->setAudioOutput(_audioOutput);
+
 }
 
 void ProTreeWidget::AddProToTree(const QString &name, const QString &path)
@@ -281,5 +287,41 @@ void ProTreeWidget::SlotPreShow()
     emit SigUpdatePic(curItem->GetPath());
     _seleted_item=curItem;
     this->setCurrentItem(curItem);
+}
+
+void ProTreeWidget::SlotSetMusic()
+{
+    QFileDialog file_dialog;
+    file_dialog.setFileMode(QFileDialog::ExistingFiles);
+    file_dialog.setWindowTitle(tr("选择音频文件"));
+    file_dialog.setDirectory((QDir::currentPath()));
+    file_dialog.setViewMode((QFileDialog::Detail));
+    file_dialog.setNameFilter(("(*.mp3)"));
+    QStringList fileNames;
+    if(file_dialog.exec()){
+        fileNames=file_dialog.selectedFiles();
+    }
+
+    if(fileNames.size()<=0)return;
+    for(auto i:fileNames){
+        _playlist->push_back(QUrl::fromLocalFile(i));
+        qDebug()<<QUrl::fromLocalFile(i);
+    }
+    qDebug()<<_playlist->at(0);
+
+    _player->setSource(_playlist->at(0));
+    qDebug()<<"音乐设置完成";
+
+}
+
+void ProTreeWidget::SlotStartMusic()
+{
+    qDebug()<<"开始播放音乐";
+    _player->play();
+}
+
+void ProTreeWidget::SlotStopMusic()
+{   qDebug()<<"关闭音乐";
+    _player->pause();
 }
 

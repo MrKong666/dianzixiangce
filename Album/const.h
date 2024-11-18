@@ -18,3 +18,5 @@ enum PicBtnState{
 };
 const int PROGRESS_WIDTH=300;
 const int PROGRESS_MAX=300;
+const int PREITEM_SIZE=100;
+const int PREICON_SIZE=90;

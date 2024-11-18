@@ -289,8 +289,10 @@ Makefile: ../../Album.pro ../../../../Qt/6.7.3/mingw_64/mkspecs/win32-g++/qmake.
 		../../../../Qt/6.7.3/mingw_64/mkspecs/features/yacc.prf \
 		../../../../Qt/6.7.3/mingw_64/mkspecs/features/lex.prf \
 		../../Album.pro \
+		../../../../Qt/6.7.3/mingw_64/lib/Qt6Multimedia.prl \
 		../../../../Qt/6.7.3/mingw_64/lib/Qt6Widgets.prl \
 		../../../../Qt/6.7.3/mingw_64/lib/Qt6Gui.prl \
+		../../../../Qt/6.7.3/mingw_64/lib/Qt6Network.prl \
 		../../../../Qt/6.7.3/mingw_64/lib/Qt6Core.prl \
 		../../../../Qt/6.7.3/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../../Qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf \
@@ -515,8 +517,10 @@ Makefile: ../../Album.pro ../../../../Qt/6.7.3/mingw_64/mkspecs/win32-g++/qmake.
 ../../../../Qt/6.7.3/mingw_64/mkspecs/features/yacc.prf:
 ../../../../Qt/6.7.3/mingw_64/mkspecs/features/lex.prf:
 ../../Album.pro:
+../../../../Qt/6.7.3/mingw_64/lib/Qt6Multimedia.prl:
 ../../../../Qt/6.7.3/mingw_64/lib/Qt6Widgets.prl:
 ../../../../Qt/6.7.3/mingw_64/lib/Qt6Gui.prl:
+../../../../Qt/6.7.3/mingw_64/lib/Qt6Network.prl:
 ../../../../Qt/6.7.3/mingw_64/lib/Qt6Core.prl:
 ../../../../Qt/6.7.3/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../../Qt/6.7.3/mingw_64/mkspecs/features/build_pass.prf:

@@ -62,7 +62,10 @@ constexpr auto qt_meta_stringdata_CLASSProTreeWidgetENDCLASS = QtMocHelpers::str
     "SlotOpenPro",
     "path",
     "SlotNextShow",
-    "SlotPreShow"
+    "SlotPreShow",
+    "SlotSetMusic",
+    "SlotStartMusic",
+    "SlotStopMusic"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -75,7 +78,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSProTreeWidgetENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      20,   14, // methods
+      23,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,28 +86,31 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSProTreeWidgetENDCLASS[] = {
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  134,    2, 0x06,    1 /* Public */,
-       3,    0,  135,    2, 0x06,    2 /* Public */,
-       4,    1,  136,    2, 0x06,    3 /* Public */,
-       5,    1,  139,    2, 0x06,    5 /* Public */,
-       6,    0,  142,    2, 0x06,    7 /* Public */,
+       1,    0,  152,    2, 0x06,    1 /* Public */,
+       3,    0,  153,    2, 0x06,    2 /* Public */,
+       4,    1,  154,    2, 0x06,    3 /* Public */,
+       5,    1,  157,    2, 0x06,    5 /* Public */,
+       6,    0,  160,    2, 0x06,    7 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       7,    2,  143,    2, 0x08,    8 /* Private */,
-      11,    0,  148,    2, 0x08,   11 /* Private */,
-      12,    1,  149,    2, 0x08,   12 /* Private */,
-      14,    0,  152,    2, 0x08,   14 /* Private */,
-      15,    0,  153,    2, 0x08,   15 /* Private */,
-      16,    0,  154,    2, 0x08,   16 /* Private */,
-      17,    0,  155,    2, 0x08,   17 /* Private */,
-      18,    1,  156,    2, 0x08,   18 /* Private */,
-      19,    0,  159,    2, 0x08,   20 /* Private */,
-      20,    0,  160,    2, 0x08,   21 /* Private */,
-      21,    2,  161,    2, 0x08,   22 /* Private */,
-      23,    0,  166,    2, 0x08,   25 /* Private */,
-      24,    1,  167,    2, 0x0a,   26 /* Public */,
-      26,    0,  170,    2, 0x0a,   28 /* Public */,
-      27,    0,  171,    2, 0x0a,   29 /* Public */,
+       7,    2,  161,    2, 0x08,    8 /* Private */,
+      11,    0,  166,    2, 0x08,   11 /* Private */,
+      12,    1,  167,    2, 0x08,   12 /* Private */,
+      14,    0,  170,    2, 0x08,   14 /* Private */,
+      15,    0,  171,    2, 0x08,   15 /* Private */,
+      16,    0,  172,    2, 0x08,   16 /* Private */,
+      17,    0,  173,    2, 0x08,   17 /* Private */,
+      18,    1,  174,    2, 0x08,   18 /* Private */,
+      19,    0,  177,    2, 0x08,   20 /* Private */,
+      20,    0,  178,    2, 0x08,   21 /* Private */,
+      21,    2,  179,    2, 0x08,   22 /* Private */,
+      23,    0,  184,    2, 0x08,   25 /* Private */,
+      24,    1,  185,    2, 0x0a,   26 /* Public */,
+      26,    0,  188,    2, 0x0a,   28 /* Public */,
+      27,    0,  189,    2, 0x0a,   29 /* Public */,
+      28,    0,  190,    2, 0x0a,   30 /* Public */,
+      29,    0,  191,    2, 0x0a,   31 /* Public */,
+      30,    0,  192,    2, 0x0a,   32 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -127,6 +133,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSProTreeWidgetENDCLASS[] = {
     QMetaType::Void, 0x80000000 | 8, QMetaType::Int,   22,   10,
     QMetaType::Void,
     QMetaType::Void, QMetaType::QString,   25,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -190,6 +199,12 @@ Q_CONSTINIT const QMetaObject ProTreeWidget::staticMetaObject = { {
         // method 'SlotNextShow'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'SlotPreShow'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'SlotSetMusic'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'SlotStartMusic'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'SlotStopMusic'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -221,6 +236,9 @@ void ProTreeWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 17: _t->SlotOpenPro((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 18: _t->SlotNextShow(); break;
         case 19: _t->SlotPreShow(); break;
+        case 20: _t->SlotSetMusic(); break;
+        case 21: _t->SlotStartMusic(); break;
+        case 22: _t->SlotStopMusic(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -282,13 +300,13 @@ int ProTreeWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 20)
+        if (_id < 23)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 20;
+        _id -= 23;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 20)
+        if (_id < 23)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 20;
+        _id -= 23;
     }
     return _id;
 }

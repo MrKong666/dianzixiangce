@@ -68,7 +68,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QWidget" name="picAnimation" native="true"/>
+       <widget class="PicAnimationWid" name="picAnimation" native="true"/>
       </item>
       <item row="0" column="2">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -108,7 +108,7 @@
           <height>120</height>
          </size>
         </property>
-        <widget class="QListWidget" name="preListWidget">
+        <widget class="PreListWid" name="preListWidget">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -129,6 +129,12 @@
            <height>110</height>
           </size>
          </property>
+         <property name="flow">
+          <enum>QListView::Flow::LeftToRight</enum>
+         </property>
+         <property name="viewMode">
+          <enum>QListView::ViewMode::IconMode</enum>
+         </property>
         </widget>
        </widget>
       </item>
@@ -147,6 +153,17 @@
    <class>PicStateBtn</class>
    <extends>QPushButton</extends>
    <header location="global">picstatebtn.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PicAnimationWid</class>
+   <extends>QWidget</extends>
+   <header location="global">picanimationwid.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>PreListWid</class>
+   <extends>QListWidget</extends>
+   <header location="global">prelistwid.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
